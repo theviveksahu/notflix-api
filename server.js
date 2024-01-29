@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const userRoutes = require("./routes/UserRoutes");
 const dotenv = require("dotenv");
 dotenv.config();
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
@@ -17,4 +18,4 @@ mongoose
   .then(() => console.log("DB connected"));
 
 app.use("/api/user", userRoutes);
-app.listen(5000, console.log("server started"));
+app.listen(PORT, console.log("server started"));
